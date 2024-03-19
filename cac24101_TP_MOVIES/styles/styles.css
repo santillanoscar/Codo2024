@@ -1,0 +1,52 @@
+/*selector universal*/
+* {
+  font-family: Verdana, Geneva;
+}
+
+/*selector de tipo (tag)*/
+h1 {
+  color: white !important;
+}
+
+h2 {
+  color: white;
+  font-family: sans-serif;
+}
+
+/*selector de clase*/
+.colorVerde {
+  color: green;
+}
+
+/*selector de id*/
+#colorNegro {
+  color: blueviolet;
+}
+/*especifidad
+    inline > id > clase > tipo
+    !important 
+*/
+
+.main {
+  height: 700px;
+  width: 1500px;
+
+  display: block;
+
+  text-align: center;
+  background-image: url(../imgs/banner-bg.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 1px solid;
+}
+
+/*TPH!!!*/
+
+.main_btn_registrarse {
+  text-decoration: none;
+  padding: 15px; /*espacio desde el borde hacia dentro*/
+  background-color: rgb(178, 17, 17);
+  color: white;
+  border-radius: 10px;
+}
