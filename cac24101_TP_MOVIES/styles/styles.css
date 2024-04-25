@@ -1,52 +1,395 @@
+@import url(./sitio-a.css);
+
 /*selector universal*/
 * {
-  font-family: Verdana, Geneva;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+}
+.ubuntu-light {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+  font-style: normal;
 }
 
-/*selector de tipo (tag)*/
-h1 {
-  color: white !important;
+.ubuntu-regular {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
-h2 {
-  color: white;
-  font-family: sans-serif;
+.ubuntu-medium {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  font-style: normal;
 }
 
-/*selector de clase*/
-.colorVerde {
-  color: green;
+.ubuntu-bold {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
-/*selector de id*/
-#colorNegro {
-  color: blueviolet;
+.ubuntu-light-italic {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+  font-style: italic;
 }
+
+.ubuntu-regular-italic {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.ubuntu-medium-italic {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.ubuntu-bold-italic {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
 /*especifidad
     inline > id > clase > tipo
     !important 
 */
-
-.main {
-  height: 700px;
-  width: 1500px;
-
-  display: block;
-
-  text-align: center;
-  background-image: url(../imgs/banner-bg.jpg);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border: 1px solid;
+.texto-blanco {
+  color: var(--texto-blanco);
 }
-
-/*TPH!!!*/
-
+.main {
+  background-image: linear-gradient(to right top, #0000008a, #0000008a),
+    url(../imgs/banner-bg.jpg);
+  /*background-attachment: fixed; */ /* tph*/
+  height: 90vh; /*vh altura relativa*/
+  width: 100vw; /*vw ancho relativo*/
+  background-size: 100vw;
+  background-position: center;
+  text-align: center;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--texto-blanco);
+  border: solid 1px green;
+}
+.main_titulo {
+  padding-bottom: 5vh;
+  font-size: 3.5rem; /*rem|em unidad de medida relativa ¿a qué?*/
+}
+.main_subtitulo {
+  margin-bottom: 5vh;
+  font-size: 2rem;
+}
 .main_btn_registrarse {
   text-decoration: none;
   padding: 15px; /*espacio desde el borde hacia dentro*/
-  background-color: rgb(178, 17, 17);
+  background-color: var(--rojo);
+  color: var(--texto-blanco);
+  border-radius: 5px;
+  font-size: 1.3rem;
+}
+
+.header {
+  width: 100vw;
+  background-color: var(--rojo);
+
+  height: 8vh;
+  min-height: 50px;
+  display: flex;
+  justify-content: center; /*main axis*/
+  align-items: center;
+  font-size: 1.2rem;
+  border: solid 1px yellow;
+}
+.header_logo {
+  height: 5vh;
+  /* display: inline-block;*/
+  width: 30vw;
+  padding-left: 3vw;
+  border: solid 2px green;
+  align-content: center;
+}
+
+.header_logo_link {
+  color: var(--texto-blanco);
+  text-decoration: none;
+  border: solid 1px violet;
+}
+
+.header_menu {
+  height: 8vh;
+  /* display: inline-block;*/
+  display: flex;
+  width: 70vw;
+  padding-right: 5vh;
+  /*padding-top: 2vh;*/
+  align-items: center;
+  justify-content: flex-end;
+
+  border: solid 1px white;
+}
+.header_menu a {
+  padding-left: 2vw;
+  padding-right: 2vw;
+  text-decoration: none; /*saca el subrayado del a */
+  color: var(--texto-blanco);
+  border: solid 1px rgb(198, 12, 231);
+}
+
+#header_menu_login {
+  padding: 1vh;
+  background: black;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/*formulario de busqueda*/
+
+.busqueda {
+  width: 100vw;
+  text-align: center;
+  /*margin: 0 auto; tambien se usa para centrar*/
+  height: 35vh;
+  background-color: var(--fondo-negro);
+  color: var(--texto-blanco);
+  padding-top: 15vh;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  border: solid 1px blue;
+}
+/*SELECTORES AVANZADOS*/
+/*1 - hijos directos: >*/
+/*2 - hermano adyacente: + */
+/*3 - descendiente */
+.busqueda > h2 + form {
+  padding-top: 3vh;
+  border: solid 1px white;
+}
+
+/*
+.busqueda form {
+  padding-top: 5vh;
+}
+
+#busqueda_form {
+  padding-top: 5vh;
+}
+
+form {
+  padding-top: 5vh;
+}
+*/
+
+/*.busqueda form input{
+  padding: 1vh;
+}*/
+.input_search {
+  padding: 2vh 3vh;
+  border-radius: 25px;
+  border: none;
+  text-transform: capitalize;
+  width: 30vw;
+  outline: none;
+}
+.button_search {
+  padding: 1.5vh 3vh;
+  border-radius: 25px;
+  border: 2px solid white;
+  background-color: var(--rojo);
+  color: var(--texto-blanco);
+  font-weight: bold;
+  font-size: 1rem;
+}
+.button_search:hover {
+  font-size: 1.1rem;
+}
+hr {
+  margin: 0 auto;
+  width: 60vw;
+  margin-top: 10vh;
+  border: 0.5px solid var(--rojo);
+  background-color: var(--fondo-negro);
+}
+
+.elemento_fijo {
+  position: fixed;
+  bottom: 3vh;
+  right: 3vw;
   color: white;
+  font-size: 3vh;
+}
+
+/*media query para impresion*/
+@media print {
+  /*todo esto se ejecuta al momento de imprimir*/
+  :root {
+    --rojo: #429f36;
+  }
+  .main {
+    background-image: none;
+  }
+}
+/*
+  @media screen and (min-width:800px ) and (max-width:900px) {
+    :root{
+      --rojo: rgb(133, 139, 16);
+    }
+    .header{
+      justify-content: flex-start;
+    }
+    .header_menu{
+      display: none;
+    }
+    
+    
+  }
+  @media screen and (min-width:900px ) and (max-width:1200px) {
+    :root{
+      --rojo: rgb(61, 196, 237);
+    }
+    .header{
+      justify-content: flex-start;
+    }
+    .header_menu{
+      display: none;
+    }
+        
+  }
+*/
+.tendencias {
+  width: 80vw;
+  color: var(--texto-blanco);
+  background-color: var(--fondo-negro);
+  border: solid 5px green;
+  padding-left: 10vw;
+  padding-right: 10vw;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.tendencias-imagenes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+  margin: auto;
+  border: solid 1px yellow;
+}
+
+.tendencias-imagenes img {
+  width: 200px;
+  min-width: 50px;
+  margin: 2vw;
   border-radius: 10px;
+  align-items: center;
+}
+.tendencias-imagenes img:hover {
+  filter: blur(5px);
+}
+
+.botones_siguiente {
+  width: 100vw;
+  height: 25vh;
+  background-color: var(--fondo-negro);
+  color: var(--texto-blanco);
+  border-radius: 5px;
+  border: 3px solid blue;
+  text-align: center;
+  align-content: center;
+  
+  padding-top: 2vh;
+  padding-bottom: 0;
+}
+.btn {
+  padding: 2vh;
+  margin-left: 3vw;
+  border-radius: 5px;
+  border: 1px solid white;
+  background-color: var(--rojo);
+  color: var(--texto-blanco);
+  font-size: 1.2rem;
+}
+
+.btn:hover {
+  padding: 1.8vh;
+  text-decoration: underline;
+}
+
+.aclamadas {
+  width: 80vw;
+  color: var(--texto-blanco);
+  background-color: var(--fondo-negro);
+  text-align: center;
+  font-size: 1.5rem;
+  border: solid 5px green;
+  padding: 0 10vw 7vh 10vw;
+  
+}
+
+.aclamadas-imagenes {
+  display: flex;
+  height: 320px;
+  overflow-x: auto;
+  scrollbar-color: var(--rojo) var(--fondo-negro);
+  border: solid 5px blue;
+}
+
+.aclamadas-imagenes img {
+  width: 150px;
+  margin: 1vh;
+  padding: 2vh;
+  border-radius: 25px;
+}
+/*
+
+
+  @media (min-width: 576px) {
+    .tendencias-imagenes div {
+      flex: 0 0 20%; /* Ajustar el ancho a 20% para pantallas más grandes
+    }
+    
+  }
+  
+  @media (min-width: 768px) {
+    .tendencias-imagenes div {
+      flex: 0 0 15%; /* Ajustar el ancho a 15% para pantallas aún más grandes
+    }
+  }
+*/
+.footer {
+  width: 100vw;
+  height: 12vh;
+  min-height: 50px;
+  background-color: var(--rojo);
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 1px blue;
+}
+
+.footer a {
+  text-align: center;
+  justify-content: center;
+  margin: 2vh;
+  padding: 1vw;
+
+  text-decoration: none;
+  color: var(--texto-blanco);
+}
+
+#footer-admin {
+  padding: 2vh;
+  background: black;
+  border-radius: 5px;
+  font-size: 1.2rem;
 }
